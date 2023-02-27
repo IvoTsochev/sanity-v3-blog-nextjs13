@@ -6,8 +6,8 @@ import { myTheme } from "./theme";
 
 // import StudioNavbar from "./components/StudioNavbar";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID! || "rknir2qt";
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET! || "production";
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig<WorkspaceOptions>({
   basePath: "/studio",
