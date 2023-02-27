@@ -11,6 +11,18 @@ export default function StudioNavbar(props: any) {
           <ArrowUturnLeftIcon className="h-6 w-6 text-[#F7AB0A] mr-2" />
           Go to Website
         </Link>
+
+        <div className="hidden md:flex p-5 rounded-lg justify-center border-2 border-[#F7AB0A]">
+          <h1 className="font-bold text-white">
+            Want Coding challenges & Solutions sent to your inbox daily? 🔥🔥🚀
+          </h1>
+          <Link
+            href="https://headless.team"
+            className="text-[#F7AB0A] font-bold ml-2"
+          >
+            headless.team
+          </Link>
+        </div>
       </div>
       <>{props.renderDefault(props)}</>
     </div>
