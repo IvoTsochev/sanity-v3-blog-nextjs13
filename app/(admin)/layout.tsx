@@ -1,8 +1,8 @@
-import "../styles/globals.css";
+import "../../styles/globals.css";
 
 export const metadata = {
-  title: "HEADLESS - Ivo - React Developer",
-  description: "Headless Team",
+  title: "HEADLESS Content Studio",
+  description: "Ivo's blog",
 };
 
 export default function RootLayout({
@@ -12,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <h1>ADMIN</h1>
+        {children}
+      </body>
     </html>
   );
 }
