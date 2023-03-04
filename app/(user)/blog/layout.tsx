@@ -2,11 +2,6 @@ import { BlogBanner } from "../../../components/BlogBanner";
 import { BlogHeader } from "../../../components/BlogHeader";
 import "../../../styles/globals.css";
 
-export const metadata = {
-  title: "My Blog",
-  description: "Ivo's blog",
-};
-
 export default function RootLayout({
   children,
 }: {

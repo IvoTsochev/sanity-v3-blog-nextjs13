@@ -10,6 +10,13 @@ type Props = {
 };
 
 const BlogList = ({ posts }: Props) => {
+  posts.sort((a, b) => {
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <div>
       <hr className="border-[#F7AB0A] mb-10" />

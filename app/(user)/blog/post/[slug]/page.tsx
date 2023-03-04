@@ -5,6 +5,15 @@ import urlFor from "../../../../../lib/urlFor";
 import { Post } from "../../../../../typings";
 import { PortableText } from "@portabletext/react";
 import { BlogRichTextComponents } from "../../../../../components/BlogRichTextComponents";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const title = params.slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (l) => l.toUpperCase());
+
+  return { title: `HEADLESS | ${title}` };
+}
 
 type Props = {
   params: {
@@ -17,11 +26,8 @@ export async function generateStaticParams() {
     *[_type == 'post'] {
       slug
     }`;
-
   const slugs: Post[] = await client.fetch(query);
-
   const slugRoutes = slugs.map((slug) => slug.slug.current);
-
   return slugRoutes.map((slug) => ({
     slug: slug,
   }));
