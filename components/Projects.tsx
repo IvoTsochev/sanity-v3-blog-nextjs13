@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
@@ -11,7 +13,7 @@ type Props = {
   projects: Project[];
 };
 
-export default function Projects({ projects }: Props) {
+export const Projects = ({ projects }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,4 +48,4 @@ export default function Projects({ projects }: Props) {
       <div className="w-full absolute top-[30%] bg-[#F7ab0a]/10 left-0 h-[500px] -skew-y-12" />
     </motion.div>
   );
-}
+};

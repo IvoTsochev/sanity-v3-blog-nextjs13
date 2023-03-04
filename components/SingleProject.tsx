@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { urlFor } from "../sanity";
+import urlFor from "../lib/urlFor";
 import { LinkIcon, CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 type Props = {
   index: number;
@@ -42,25 +43,27 @@ export default function SingleProject({ projects, project, index }: Props) {
                 href={project.linkToWebsite}
                 target="_blank"
               >
-                {/* <a target="_blank"> */}
                 <LinkIcon
-                  data-tip="Website"
+                  data-tooltip-id="website"
+                  data-tooltip-content="Website"
+                  data-tooltip-variant="dark"
                   className="w-7 h-7 text-gray-400 inline mx-5 cursor-pointer"
                 />
-                {/* </a> */}
               </Link>
-              <ReactTooltip />
+              <Tooltip id="website" />
             </>
           ) : null}
           {project.linkToBuild ? (
             <>
               <Link href="https://goole.com">
                 <CodeBracketIcon
-                  data-tip="GitHub"
+                  data-tooltip-id="github"
+                  data-tooltip-content="GitHub"
+                  data-tooltip-variant="dark"
                   className="w-7 h-7 text-gray-400 inline cursor-pointer"
                 />
               </Link>
-              <ReactTooltip />
+              <Tooltip id="github" />
             </>
           ) : null}
         </h4>

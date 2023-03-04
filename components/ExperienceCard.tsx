@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Experience } from '../typings';
-import { urlFor } from '../sanity';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Experience } from "../typings";
+import urlFor from "../lib/urlFor";
 
 type Props = {
   experience: Experience;
@@ -46,9 +46,9 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          {new Date(experience.dateStarted).toDateString()} -{' '}
+          {new Date(experience.dateStarted).toDateString()} -{" "}
           {experience.isCurrentlyWorkingHere
-            ? 'Present'
+            ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-lg h-80">

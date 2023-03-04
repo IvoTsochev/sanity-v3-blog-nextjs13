@@ -1,16 +1,18 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
 import { PageInfo } from "../typings";
-import { urlFor } from "../sanity";
+import urlFor from "../lib/urlFor";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
-function Hero({ pageInfo }: Props) {
+export const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}`,
@@ -43,21 +45,22 @@ function Hero({ pageInfo }: Props) {
 
         <div className="pt-5">
           <Link href="#about">
-            <button className="heroButton">About</button>
+            <button className="heroButton m-2">About</button>
           </Link>
           <Link href="#experience">
-            <button className="heroButton">Experience</button>
+            <button className="heroButton m-2">Experience</button>
           </Link>
           <Link href="#skills">
-            <button className="heroButton">Skills</button>
+            <button className="heroButton m-2">Skills</button>
           </Link>
           <Link href="#projects">
-            <button className="heroButton">Projects</button>
+            <button className="heroButton m-2">Projects</button>
+          </Link>
+          <Link href="/blog">
+            <button className="heroButton m-2">Blog</button>
           </Link>
         </div>
       </div>
     </div>
   );
-}
-
-export default Hero;
+};

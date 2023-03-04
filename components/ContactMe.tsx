@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -14,7 +16,7 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-export default function ContactMe({ pageInfo }: Props) {
+export const ContactMe = ({ pageInfo }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
@@ -92,4 +94,4 @@ export default function ContactMe({ pageInfo }: Props) {
       </div>
     </div>
   );
-}
+};

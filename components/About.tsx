@@ -1,14 +1,16 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
-import { urlFor } from "../sanity";
+import urlFor from "../lib/urlFor";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
-function About({ pageInfo }: Props) {
+export const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{
@@ -54,6 +56,4 @@ function About({ pageInfo }: Props) {
       </div>
     </motion.div>
   );
-}
-
-export default About;
+};
