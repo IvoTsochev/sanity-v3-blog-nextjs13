@@ -6,11 +6,15 @@ import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
 import urlFor from "../lib/urlFor";
 
+import { labels } from "../utils/labels";
+import { colors } from "../utils/typeConstants";
+
 type Props = {
   pageInfo: PageInfo;
 };
 
 export const About = ({ pageInfo }: Props) => {
+  const { primary } = colors;
   return (
     <motion.div
       initial={{
@@ -21,7 +25,7 @@ export const About = ({ pageInfo }: Props) => {
       className="flex flex-col md:flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
       <h3 className="mb-0 uppercase tracking-[20px] text-gray-500 text-2xl">
-        About
+        {labels.about}
       </h3>
 
       <motion.div
@@ -48,9 +52,11 @@ export const About = ({ pageInfo }: Props) => {
 
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here is a{" "}
-          <span className="underline decoration-[#F7ab0a]">little</span>{" "}
-          background
+          {labels.hereIsA}{" "}
+          <span className={`underline decoration-[${primary}]`}>
+            {labels.little}
+          </span>{" "}
+          {labels.background}
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>

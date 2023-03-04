@@ -1,0 +1,32 @@
+export const labels = {
+  about: "About",
+  hereIsA: "Here is a",
+  little: "little",
+  background: "background",
+  welcomeTo: "Welcome to",
+  ivosDailyBlog: "Ivo's Daily Blog",
+  everyDevelopers: "Every developer's",
+  favouriteBlogInTheDevoshpere: "favourite blog in the devoshpere",
+  newProductFeatures: "New product features",
+  theLatestInTechnology: "The latest in technology",
+  theWeeklyDebuggingNightmaresAndMore:
+    "The weekly debugging nightmares & More!",
+  headlessTeam: "HEADLESS TEAM",
+  signUpForMyNewsletter: "Sign up for my newsletter",
+  readPost: "Read post",
+  contact: "Contact",
+  sendMeaMsgIfYoureNotSureAboutSomething:
+    "Send me a msg if you're not sure about something.",
+  letsTalk: "Let's Talk.",
+  submit: "Submit",
+  getInTouch: "Get in touch",
+  experience: "Experience",
+  skills: "Skills",
+  projects: "Projects",
+  blog: "Blog",
+  caseStudy: "Case Study",
+  of: "of",
+  hoverOveraSkillForCurrentProficiency:
+    "Hover over a skill for current proficiency",
+  goToWebsite: "Go to website",
+};

@@ -6,6 +6,7 @@ import { LinkIcon, CodeBracketIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { labels } from "../utils/labels";
 
 type Props = {
   index: number;
@@ -33,8 +34,8 @@ export default function SingleProject({ projects, project, index }: Props) {
 
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
         <h4 className="text-4xl font-semibold text-center">
-          <span className="underline decoration-[#F7aB0a]/50">
-            Case Study {index + 1} of {projects.length}:
+          <span className={`underline decoration-[#F7aB0a]/50`}>
+            {labels.caseStudy} {index + 1} {labels.of} {projects.length}:
           </span>{" "}
           {project?.title}
           {project.linkToWebsite ? (

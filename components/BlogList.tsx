@@ -5,11 +5,16 @@ import urlFor from "../lib/urlFor";
 import { Post } from "../typings";
 import ClientSideRoute from "./ClientSideRoute";
 
+import { labels } from "../utils/labels";
+import { colors } from "../utils/typeConstants";
+
 type Props = {
   posts: Post[];
 };
 
 const BlogList = ({ posts }: Props) => {
+  const { primary } = colors;
+
   posts.sort((a, b) => {
     const dateA = new Date(a.publishedAt);
     const dateB = new Date(b.publishedAt);
@@ -19,7 +24,7 @@ const BlogList = ({ posts }: Props) => {
 
   return (
     <div>
-      <hr className="border-[#F7AB0A] mb-10" />
+      <hr className={`border-[${primary}] mb-10`} />
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute
@@ -49,7 +54,7 @@ const BlogList = ({ posts }: Props) => {
                     {post.categories?.map((category) => (
                       <div
                         key={category._id}
-                        className="bg-[#F7AB0A] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
+                        className={`bg-[${primary}] text-center text-black px-3 py-1 rounded-full text-sm font-semibold`}
                       >
                         <p>{category.title}</p>
                       </div>
@@ -63,7 +68,7 @@ const BlogList = ({ posts }: Props) => {
               </div>
 
               <p className="mt-5 font-bold flex items-center group-hover:underline">
-                Read Post
+                {labels.readPost}
                 <ArrowUpRightIcon className="ml-2 h-4 w-4" />
               </p>
             </div>

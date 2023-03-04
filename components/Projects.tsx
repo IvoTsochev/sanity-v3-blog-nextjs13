@@ -8,12 +8,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import { colors } from "../utils/typeConstants";
 
 type Props = {
   projects: Project[];
 };
 
 export const Projects = ({ projects }: Props) => {
+  const { primary } = colors;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +28,9 @@ export const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className=" w-full flex overflow-y-hidden z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
+      <div
+        className={` w-full flex overflow-y-hidden z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[${primary}]/80`}
+      >
         <Swiper
           pagination={{
             dynamicBullets: true,
@@ -45,7 +50,9 @@ export const Projects = ({ projects }: Props) => {
         </Swiper>
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#F7ab0a]/10 left-0 h-[500px] -skew-y-12" />
+      <div
+        className={`w-full absolute top-[30%] bg-[#F7ab0a]/10 left-0 h-[500px] -skew-y-12`}
+      />
     </motion.div>
   );
 };

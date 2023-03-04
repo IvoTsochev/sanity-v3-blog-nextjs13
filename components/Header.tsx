@@ -5,6 +5,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../typings";
+import { labels } from "../utils/labels";
 
 type Props = {
   socials: Social[];
@@ -62,7 +63,7 @@ export const Header = ({ socials }: Props) => {
             bgColor="transparent"
           /> */}
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-            Get In Touch
+            {labels.getInTouch}
           </p>
         </motion.div>
       </Link>

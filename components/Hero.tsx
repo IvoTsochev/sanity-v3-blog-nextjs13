@@ -7,12 +7,16 @@ import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import urlFor from "../lib/urlFor";
+import { labels } from "../utils/labels";
+import { colors } from "../utils/typeConstants";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 export const Hero = ({ pageInfo }: Props) => {
+  const { primary } = colors;
+
   const [text, count] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}`,
@@ -40,24 +44,24 @@ export const Hero = ({ pageInfo }: Props) => {
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
-          <Cursor cursorColor="#df6209" />
+          <Cursor cursorColor={`${primary}`} />
         </h1>
 
         <div className="pt-5">
           <Link href="#about">
-            <button className="heroButton m-2">About</button>
+            <button className="heroButton m-2">{labels.about}</button>
           </Link>
           <Link href="#experience">
-            <button className="heroButton m-2">Experience</button>
+            <button className="heroButton m-2">{labels.experience}</button>
           </Link>
           <Link href="#skills">
-            <button className="heroButton m-2">Skills</button>
+            <button className="heroButton m-2">{labels.skills}</button>
           </Link>
           <Link href="#projects">
-            <button className="heroButton m-2">Projects</button>
+            <button className="heroButton m-2">{labels.projects}</button>
           </Link>
           <Link href="/blog">
-            <button className="heroButton m-2">Blog</button>
+            <button className="heroButton m-2">{labels.blog}</button>
           </Link>
         </div>
       </div>

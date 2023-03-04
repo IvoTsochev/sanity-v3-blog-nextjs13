@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "../lib/urlFor";
+import { colors } from "../utils/typeConstants";
+
+const { primary } = colors;
 
 export const BlogRichTextComponents = {
   types: {
@@ -40,7 +43,7 @@ export const BlogRichTextComponents = {
     ),
 
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-[#F7AB0A] border-l-4 pl-5 py-5 my-5">
+      <blockquote className={`border-l-[${primary}] border-l-4 pl-5 py-5 my-5`}>
         {children}
       </blockquote>
     ),
@@ -51,7 +54,7 @@ export const BlogRichTextComponents = {
         <Link
           href={value.href ? value.href : "/"}
           rel={value.href?.startsWith("/") ? undefined : "noreferrer noopener"}
-          className="underline decoration-[#F7AB0A] hover:decoration-black"
+          className={`underline decoration-[${primary}] hover:decoration-black`}
           target="_blank"
         >
           {children}

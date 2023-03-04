@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
+import { labels } from "../utils/labels";
 
 type Props = {
   skills: SkillType[];
@@ -23,10 +24,10 @@ export const Skills = ({ skills }: Props) => {
     >
       <header className="text-center mb-10 xl:mb-10">
         <h3 className="mb-2 uppercase tracking-[20px] text-gray-500 text-2xl">
-          Skills
+          {labels.skills}
         </h3>
         <h3 className="uppercase tracking-[3px] text-gray-500 text-sm">
-          Hover over a skill for current proficiency
+          {labels.hoverOveraSkillForCurrentProficiency}
         </h3>
       </header>
 
