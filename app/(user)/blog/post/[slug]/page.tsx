@@ -6,11 +6,12 @@ import { Post } from "../../../../../typings";
 import { PortableText } from "@portabletext/react";
 import { BlogRichTextComponents } from "../../../../../components/BlogRichTextComponents";
 import type { Metadata } from "next";
+import { colors } from "../../../../../utils/typeConstants";
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const title = params.slug
     .replace(/-/g, " ")
-    .replace(/\b\w/g, (l) => l.toUpperCase());
+    .replace(/\b\w/g, (l: any) => l.toUpperCase());
 
   return { title: `HEADLESS | ${title}` };
 }
@@ -20,6 +21,8 @@ type Props = {
     slug: string;
   };
 };
+
+export const revalidate = 60; // revalidate this page every 60 seconds
 
 export async function generateStaticParams() {
   const query = groq`
@@ -47,7 +50,9 @@ const Post = async ({ params: { slug } }: Props) => {
 
   return (
     <article className="px-10 pb-28">
-      <section className="space-y-2 border border-[#F7AB0A] text-white">
+      <section
+        className={`space-y-2 border border-[${colors.primary}] text-white`}
+      >
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
             <Image
@@ -57,7 +62,7 @@ const Post = async ({ params: { slug } }: Props) => {
               fill
             />
           </div>
-          <section className="p-5 bg-[#F7AB0A] w-full">
+          <section className={`p-5 bg-[${colors.primary}] w-full`}>
             <div className="flex flex-col md:flex-row justify-between gap-y-5">
               <div>
                 <h1 className="text-4xl font-extrabold">{post.title}</h1>

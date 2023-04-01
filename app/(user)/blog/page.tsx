@@ -2,6 +2,7 @@ import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import { client } from "../../../lib/sanity.client";
 import BlogPreviewSuspense from "../../../components/BlogPreviewSuspense";
+import { colors } from "../../../utils/typeConstants";
 
 import BlogPreviewList from "../../../components/BlogPreviewList";
 import BlogList from "../../../components/BlogList";
@@ -20,7 +21,9 @@ export default async function Homepage() {
       <BlogPreviewSuspense
         fallback={
           <div role="status">
-            <p className="text-center text-lg animate-pulse text-[#F7AB0A]">
+            <p
+              className={`text-center text-lg animate-pulse text-[${colors.primary}]`}
+            >
               Loading Preview Data...
             </p>
           </div>

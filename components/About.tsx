@@ -44,7 +44,6 @@ export const About = ({ pageInfo }: Props) => {
           src={urlFor(pageInfo?.profilePicture).url()}
           width={400}
           height={550}
-          // objectFit="cover"
           className="rounded-2xl"
           alt={pageInfo?.name}
         />

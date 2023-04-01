@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import urlFor from "../lib/urlFor";
+import { colors } from "../utils/typeConstants";
 
 type Props = {
   experience: Experience;
@@ -10,7 +11,9 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center justify-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] xl:w-[700px] xl:min-h-[832px] snap-center bg-[#292929] p-5 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden mx-auto">
+    <article
+      className={`flex flex-col rounded-lg items-center justify-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] xl:w-[700px] xl:min-h-[832px] snap-center bg-[${colors.primaryGray}] p-5 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden mx-auto`}
+    >
       <motion.div
         initial={{
           y: -100,
