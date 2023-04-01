@@ -24,7 +24,7 @@ const BlogList = ({ posts }: Props) => {
 
   return (
     <div>
-      <hr className={`border-[${primary}] mb-10`} />
+      <hr className={`border-[#F7AB0A}] mb-10`} />
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute
@@ -54,7 +54,7 @@ const BlogList = ({ posts }: Props) => {
                     {post.categories?.map((category) => (
                       <div
                         key={category._id}
-                        className={`bg-[${primary}] text-center text-black px-3 py-1 rounded-full text-sm font-semibold`}
+                        className={`bg-[#F7AB0A] text-center text-black px-3 py-1 rounded-full text-sm font-semibold`}
                       >
                         <p>{category.title}</p>
                       </div>

@@ -15,4 +15,8 @@
   html {
     @apply scroll-smooth md:scroll-smooth xl:scroll-smooth
   }
+
+  .blur {
+    @apply filter blur-md;
+  }
 }
