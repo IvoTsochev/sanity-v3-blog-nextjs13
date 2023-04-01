@@ -21,8 +21,6 @@ type Props = {
 export const ContactMe = ({ pageInfo }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
-  const { primary } = colors;
-
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto: ivaylo@headless.team?subject=${formData.subject}&body=Hi,my name is ${formData.name}. \r ${formData.message} (${formData.email})`;
   };
@@ -36,7 +34,7 @@ export const ContactMe = ({ pageInfo }: Props) => {
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           {labels.sendMeaMsgIfYoureNotSureAboutSomething}{" "}
-          <span className={`decoration-[${primary}] underline`}>
+          <span className={`decoration-[#F7AB0A] underline`}>
             {labels.letsTalk}
           </span>
         </h4>
@@ -49,13 +47,15 @@ export const ContactMe = ({ pageInfo }: Props) => {
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon
-              className={`text-[${primary}] h-7 w-7 animate-pulse`}
+              className={`text-[${colors.primary}] h-7 w-7 animate-pulse`}
             />
             <p className="text-2xl">{pageInfo?.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className={`text-[${primary}] h-7 w-7 animate-pulse`} />
+            <MapPinIcon
+              className={`text-[${colors.primary}] h-7 w-7 animate-pulse`}
+            />
             <p className="text-2xl">{pageInfo?.address}</p>
           </div>
         </div>
@@ -94,7 +94,7 @@ export const ContactMe = ({ pageInfo }: Props) => {
 
           <button
             type="submit"
-            className={`bg-[${primary}] py-5 px-10 rounded-md text-black font-bold text-lg`}
+            className={`bg-[${colors.primary}] py-5 px-10 rounded-md text-black font-bold text-lg`}
           >
             {labels.submit}
           </button>
