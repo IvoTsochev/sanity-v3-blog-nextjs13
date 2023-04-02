@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
@@ -8,12 +10,17 @@ import ClientSideRoute from "./ClientSideRoute";
 import { labels } from "../utils/labels";
 import { colors } from "../utils/typeConstants";
 
+import { useSelector, useDispatch } from "react-redux";
+import { close } from "../store/slices/subModalSlice";
+import type { RootState } from "../store/store";
+
 type Props = {
   posts: Post[];
 };
 
 const BlogList = ({ posts }: Props) => {
-  const { primary } = colors;
+  const modal = useSelector((state: RootState) => state.subModal.value);
+  const dispatch = useDispatch();
 
   posts.sort((a, b) => {
     const dateA = new Date(a.publishedAt);
@@ -24,7 +31,7 @@ const BlogList = ({ posts }: Props) => {
 
   return (
     <div>
-      <hr className={`border-[${primary}] mb-10`} />
+      <hr className={`border-[${colors.primary}] mb-10`} />
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute
@@ -54,7 +61,7 @@ const BlogList = ({ posts }: Props) => {
                     {post.categories?.map((category) => (
                       <div
                         key={category._id}
-                        className={`bg-[${primary}] text-center text-black px-3 py-1 rounded-full text-sm font-semibold`}
+                        className={`bg-[${colors.primary}] text-center text-black px-3 py-1 rounded-full text-sm font-semibold`}
                       >
                         <p>{category.title}</p>
                       </div>
@@ -75,6 +82,14 @@ const BlogList = ({ posts }: Props) => {
           </ClientSideRoute>
         ))}
       </div>
+      {modal ? (
+        <div className="absolute top-0 left-0 bottom-0 right-0 bg-gray-700/90 flex justify-center items-center">
+          <div className="p-6 bg-red-400">
+            <h1>HELLOOO</h1>
+            <button onClick={() => dispatch(close())}>CLOSE</button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

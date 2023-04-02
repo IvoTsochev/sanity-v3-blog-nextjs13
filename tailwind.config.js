@@ -8,5 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
+  safelist: ["bg-[#F7AB0A]", "border-[#333333]"],
   plugins: [require("@tailwindcss/line-clamp"), require("tailwind-scrollbar")],
 };

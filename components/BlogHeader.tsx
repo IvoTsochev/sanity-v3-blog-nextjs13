@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { labels } from "../utils/labels";
 import { colors } from "../utils/typeConstants";
 
+import { useDispatch } from "react-redux";
+import { open } from "../store/slices/subModalSlice";
+
 export const BlogHeader = () => {
-  const { primary } = colors;
+  const dispatch = useDispatch();
 
   return (
     <header className="flex items-center justify-between space-x-2 font-bold px-10 py-5">
@@ -23,12 +28,12 @@ export const BlogHeader = () => {
       </div>
 
       <div>
-        <Link
-          href="/"
-          className={`px-5 py-3 tetxt-sm md:text-base bg-gray-900 text-[${primary}] flex items-center rounded-full`}
+        <button
+          className={`px-5 py-3 tetxt-sm md:text-base bg-gray-900 text-[${colors.primary}] flex items-center rounded-full`}
+          onClick={() => dispatch(open())}
         >
           {labels.signUpForMyNewsletter}
-        </Link>
+        </button>
       </div>
     </header>
   );
