@@ -10,6 +10,8 @@ import ClientSideRoute from "./ClientSideRoute";
 import { labels } from "../utils/labels";
 import { colors } from "../utils/typeConstants";
 
+import NewsletterModal from "./NewsletterModal";
+
 import { useSelector, useDispatch } from "react-redux";
 import { close } from "../store/slices/subModalSlice";
 import type { RootState } from "../store/store";
@@ -83,10 +85,13 @@ const BlogList = ({ posts }: Props) => {
         ))}
       </div>
       {modal ? (
-        <div className="absolute top-0 left-0 bottom-0 right-0 bg-gray-700/90 flex justify-center items-center">
-          <div className="p-6 bg-red-400">
-            <h1>HELLOOO</h1>
-            <button onClick={() => dispatch(close())}>CLOSE</button>
+        <div className="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center">
+          <div
+            className="absolute bg-gray-700/90 top-0 left-0 bottom-0 right-0"
+            onClick={() => dispatch(close())}
+          ></div>
+          <div className="p-6 bg-slate-900 max-w-[580px] z-10">
+            <NewsletterModal />
           </div>
         </div>
       ) : null}
