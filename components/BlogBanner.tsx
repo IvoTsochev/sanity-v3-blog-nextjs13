@@ -8,19 +8,19 @@ export const BlogBanner = () => {
       <div>
         <h1 className="text-7xl">{labels.ivosDailyBlog}</h1>
         <h2 className="mt-5 md:mt-0">
-          {labels.welcomeTo}{" "}
+          Embrace the Dev World:{" "}
           <span
             className={`underline decoration-4 decoration-[${colors.primary}]`}
           >
-            {labels.everyDevelopers}
+            A Cherished Blog
           </span>{" "}
-          {labels.favouriteBlogInTheDevoshpere}
+          for Developers Everywhere
         </h2>
       </div>
 
       <p className="mt-5 md:mt-2 text-gray-400 max-w-sm">
-        {labels.newProductFeatures} | {labels.theLatestInTechnology} |{" "}
-        {labels.theWeeklyDebuggingNightmaresAndMore}
+        Innovative Tech Upgrades | Cutting-edge Tech Updates | Weekly
+        Troubleshooting Tales & Beyond!
       </p>
     </div>
   );
