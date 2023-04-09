@@ -19,11 +19,11 @@ export const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}`,
-      "I'm a React developer",
+      "React developer",
       "<web3Enthusiast />",
     ],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 1000,
   });
 
   return (
@@ -42,7 +42,7 @@ export const Hero = ({ pageInfo }: Props) => {
           <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
             {pageInfo?.role}
           </h2>
-          <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+          <h1 className=" text-3xl md:text-5xl lg:text-6xl font-semibold px-10">
             <span className="mr-3">{text}</span>
             <Cursor cursorColor={`${colors.primary}`} />
           </h1>

@@ -17,20 +17,15 @@ type Props = {
 export default function SingleProject({ projects, project, index }: Props) {
   return (
     <div className="w-screen flex-shrink-0 flex flex-col space-y-5 items-center justify-center p-5 md:p-30 ">
-      <motion.div
-        initial={{ y: -300, opacity: 0 }}
-        transition={{ duration: 1.5 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div>
         <Image
           width={1000}
           height={500}
-          // objectFit="cover"
+          style={{ objectFit: "cover" }}
           src={urlFor(project.image).url()}
           alt={project.title}
         />
-      </motion.div>
+      </div>
 
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
         <h4 className="text-4xl font-semibold text-center">
