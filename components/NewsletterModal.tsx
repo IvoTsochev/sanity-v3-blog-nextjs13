@@ -32,20 +32,20 @@ const NewsletterModal = () => {
   return (
     <div className="p-6">
       <h1 className="text-4xl mb-6">
-        A mailing list that <br />
-        isn't doodoo-butter.
+        Subscribe <br />
+        to my newsletter.
       </h1>
 
-      <p className="mb-6">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt molestiae
-        rerum voluptas temporibus molestias velit quisquam doloremque doloribus
-        quibusdam ratione laborum ipsum autem quae, iusto inventore placeat,
-        repellat dicta assumenda.
+      {
+        !message ? (
+          <>
+          <p className="mb-6">
+        I won't spam you with emails. I will only send you the best content. 
       </p>
 
       <div className="flex bg-gradient-to-r from-red-500 to-orange-500 p-[3px]">
         <input
-          type="email"
+          type="email" 
           className="w-full max-w-[350px] p-2 focus:outline-none text-black"
           placeholder="Enter your email"
           ref={inputRef}
@@ -53,8 +53,27 @@ const NewsletterModal = () => {
         />
         <button className="w-full text-center" onClick={subscribe}>Subscribe to newsletter > </button>
       </div>
+          </>
+        ) : message
+      }
 
-      {message}
+
+      {/* <p className="mb-6">
+        I won't spam you with emails. I will only send you the best content. 
+      </p>
+
+      <div className="flex bg-gradient-to-r from-red-500 to-orange-500 p-[3px]">
+        <input
+          type="email" 
+          className="w-full max-w-[350px] p-2 focus:outline-none text-black"
+          placeholder="Enter your email"
+          ref={inputRef}
+          name="email"
+        />
+        <button className="w-full text-center" onClick={subscribe}>Subscribe to newsletter > </button>
+      </div> */}
+
+      {/* {message} */}
     </div>
   );
 };
