@@ -6,10 +6,14 @@ import Link from "next/link";
 import { labels } from "../utils/labels";
 import { colors } from "../utils/typeConstants";
 
-import { useDispatch } from "react-redux";
-import { open } from "../store/slices/subModalSlice";
+import NewsletterModal from "./NewsletterModal";
+
+import { useSelector, useDispatch } from "react-redux";
+import { open, close } from "../store/slices/subModalSlice";
+import type { RootState } from "../store/store";
 
 export const BlogHeader = () => {
+  const modal = useSelector((state: RootState) => state.subModal.value);
   const dispatch = useDispatch();
 
   return (
@@ -35,6 +39,18 @@ export const BlogHeader = () => {
           {labels.signUpForMyNewsletter}
         </button>
       </div>
+
+      {modal ? (
+        <div className="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center z-50">
+          <div
+            className="absolute bg-gray-700/90 top-0 left-0 bottom-0 right-0"
+            onClick={() => dispatch(close())}
+          ></div>
+          <div className="p-6 bg-slate-900 max-w-[580px] z-10">
+            <NewsletterModal />
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 };

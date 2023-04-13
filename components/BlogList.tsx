@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
@@ -10,20 +8,11 @@ import ClientSideRoute from "./ClientSideRoute";
 import { labels } from "../utils/labels";
 import { colors } from "../utils/typeConstants";
 
-import NewsletterModal from "./NewsletterModal";
-
-import { useSelector, useDispatch } from "react-redux";
-import { close } from "../store/slices/subModalSlice";
-import type { RootState } from "../store/store";
-
 type Props = {
   posts: Post[];
 };
 
 const BlogList = ({ posts }: Props) => {
-  const modal = useSelector((state: RootState) => state.subModal.value);
-  const dispatch = useDispatch();
-
   posts.sort((a, b) => {
     const dateA = new Date(a.publishedAt);
     const dateB = new Date(b.publishedAt);
@@ -84,17 +73,6 @@ const BlogList = ({ posts }: Props) => {
           </ClientSideRoute>
         ))}
       </div>
-      {modal ? (
-        <div className="absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center">
-          <div
-            className="absolute bg-gray-700/90 top-0 left-0 bottom-0 right-0"
-            onClick={() => dispatch(close())}
-          ></div>
-          <div className="p-6 bg-slate-900 max-w-[580px] z-10">
-            <NewsletterModal />
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };
