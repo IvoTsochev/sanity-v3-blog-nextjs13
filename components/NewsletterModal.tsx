@@ -25,7 +25,7 @@ const NewsletterModal = () => {
       return;
     };
 
-    inputRef.current.value = null;
+    inputRef.current!.value = '';
     setMessage('Success! 🔥🔥🚀🚀 You are now subscribed to the newsletter.');
   };
 
@@ -56,24 +56,6 @@ const NewsletterModal = () => {
           </>
         ) : message
       }
-
-
-      {/* <p className="mb-6">
-        I won't spam you with emails. I will only send you the best content. 
-      </p>
-
-      <div className="flex bg-gradient-to-r from-red-500 to-orange-500 p-[3px]">
-        <input
-          type="email" 
-          className="w-full max-w-[350px] p-2 focus:outline-none text-black"
-          placeholder="Enter your email"
-          ref={inputRef}
-          name="email"
-        />
-        <button className="w-full text-center" onClick={subscribe}>Subscribe to newsletter > </button>
-      </div> */}
-
-      {/* {message} */}
     </div>
   );
 };
