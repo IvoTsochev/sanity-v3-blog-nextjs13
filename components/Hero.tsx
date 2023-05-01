@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import Link from "next/link";
 import { PageInfo } from "../typings";
 import urlFor from "../lib/urlFor";
 import { labels } from "../utils/labels";
@@ -48,21 +47,21 @@ export const Hero = ({ pageInfo }: Props) => {
           </h1>
 
           <div className="pt-5">
-            <Link href="#about">
+            <a href="#about">
               <button className="heroButton m-2">{labels.about}</button>
-            </Link>
-            <Link href="#experience">
+            </a>
+            <a href="#experience">
               <button className="heroButton m-2">{labels.experience}</button>
-            </Link>
-            <Link href="#skills">
+            </a>
+            <a href="#skills">
               <button className="heroButton m-2">{labels.skills}</button>
-            </Link>
-            <Link href="#projects">
+            </a>
+            <a href="#projects">
               <button className="heroButton m-2">{labels.projects}</button>
-            </Link>
-            <Link href="/blog">
+            </a>
+            <a href="/blog">
               <button className="heroButton m-2">{labels.blog}</button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
